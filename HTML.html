@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bio Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #150101;
+        }
+        .student {
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            margin: 10px 0;
+        }
+        img {
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: #1d23c9;
+            color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            flex: 1 1 200px;
+            min-width: 150px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #ffeb3b;
+        }
+        .card p {
+            margin: 0;
+            color: #e0e0e0;
+        }
+        @media(max-width: 700px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bio Data</h1>
+
+        <div class="student">
+            <p><strong>Name:</strong> R. Tharun</p>
+            <p><strong>Age:</strong> 21</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Address:</strong> Ananthapur</p>
+            <p><strong>Phone:</strong> 9515005704</p>
+            <p><strong>Education:</strong> B.Tech at SRIT</p>
+        </div>
+
+        <h2>Subjects</h2>
+        <ol>
+            <li>Maths</li>
+            <li>Science</li>
+            <li>Social</li>
+            <li>English</li>
+            <li>Telugu</li>
+            <li>Hindi</li>
+        </ol>
+
+        <h3>My Photo</h3>
+        <img src="../HTML/frontend/resorces/images.jpg" alt="My Photo" width="200" height="200">
+
+        <h2>Professional Summary</h2>
+        <p>Experienced Full Stack Developer with hands-on projects.</p>
+
+        <h2>Projects</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Project Management Dashboard</h3>
+                <p>Developed a responsive dashboard for tracking progress.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce Platform</h3>
+                <p>Built a scalable e-commerce site with secure payments and product catalog.</p>
+            </div>
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>Designed and deployed a personal portfolio.</p>
+            </div>
+        </div>
+
+        <footer>
+            <span>Vibe Coder</span>
+        </footer>
+    </div>
+</body>
+</html>
+
