@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website </title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;               /* Flexbox for layout */
+      justify-content: space-between;
+      align-items: center;
+      background: blue;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;               /* Links side by side */
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Mobile view */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;    /* Stack logo + nav */
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;    /* Stack links vertically */
+        gap: 8px;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">MyLogo</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+</body>
+</html>

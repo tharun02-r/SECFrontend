@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column; /* Stack items */
+      gap: 10px;              /* Space between items */
+      max-width: 300px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      padding: 5px;
+    }
+
+    .gender {
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form>
+    <label>Full Name</label>
+    <input type="text">
+
+    <label>Email</label>
+    <input type="email">
+
+    <label>Course</label>
+    <select>
+      <option>Web Development</option>
+      <option>Data Science</option>
+      <option>AI</option>
+    </select>
+
+    <label>Gender</label>
+    <div class="gender">
+      <label><input type="radio" name="gender"> Male</label>
+      <label><input type="radio" name="gender"> Female</label>
+      <label><input type="radio" name="gender"> Other</label>
+    </div>
+
+    <label>Password</label>
+    <input type="password">
+
+    <label>Confirm Password</label>
+    <input type="password">
+
+    <button type="submit">Register</button>
+  </form>
+
+</body>
+</html>

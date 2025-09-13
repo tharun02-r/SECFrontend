@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My jQuery Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Hello, jQuery!</h1>
+    <h3>Welcome to jQuery</h3>
+    <button id="myButton">Click Me</button>>
+    <div class="temp">
+        <p>This is different div on which we are using div tag class tag using jquery</p>    
+        <input type="text" id="myinput">
+        <p id="output">hi this text</p>
+    </div> 
+    <ul id="list">
+        <li>item1</li>
+    </ul>
+    <button id="add">Add item</button>
+    <button id="addFirst">Add First</button>
+    <button id="remove">Remove</button>
+    <button id="removekey">Remove key</button>
+    <script>
+        $(document).ready(function(){
+            $("#myButton").click(function(){
+                $("h1").text("Button Clicked!");
+                $("h3").text("Pressed button");
+                $(".temp").css("background-color","orange");
+                $("p").css("font-family","calibri");
+            });
+            $("#add").click(function(){
+                $("#list").append("<li>new item append from script</li>");
+            });
+            $("#addFirst").click(function(){
+                $("#list").prepend("<li>new item prepend from script</li>");
+            });
+            $("#remove").click(function(){
+                $("#list li:first").remove();
+            });
+            $("#myinput").on("input", function(){
+                let val = $(this).val();
+                $("#output").text(val);
+            });
+            $("#myButton").dblclick(function(){
+                $("h1").text("Button Clicked Twice!");
+                $("h3").text("Button Clicked! Twice Duplicate");
+                $(".temp").css("background-color", "orange");
+                $("p").css("font-family", "calibri");
+            });
+            $("#myButton").hover(function(){
+                $("h1").text("Button Hovered!");
+                $("h3").text("Button Hovered! Duplicate");
+                $(".temp").css("background-color", "cyan");
+                $("p").css("font-style", "italic");
+            });
+        });
+    </script>
+</body>
+</html>

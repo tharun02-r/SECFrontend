@@ -1,0 +1,55 @@
+<html> 
+<head>
+    <title>Grid</title>
+    <link rel="stylesheet" href="grid.css">
+    <style>
+        
+        .temp{
+            border:2px solid rgb(96, 51, 179);
+            width:30%;
+            margin-left: 35%;
+            margin-top:5%;
+            padding: 10px;
+            background-color: rgba(63, 34, 95, 0);
+        }
+        .form{
+            display:grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 10px;
+        }
+        button{
+            grid-column:span 2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+    
+    </nav>
+    <div class="temp">
+        <form class="form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"placeholder="E-mail">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label for="ID">ID</label>
+        <input type="char" id="ID" name="ID">
+
+        <label for="gemder">Gender:</label><br>
+        
+        <input type="radio" id="male" name="gender" value="Male">Male</button>
+        <input type="radio" id="female" name="gender" value="Female">Female</button>
+         
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" placeholder="phone Number"> 
+        <button type="submit">Submit</button> 
+         </form>
+        </div>
+         
+    </body>
+</html>
