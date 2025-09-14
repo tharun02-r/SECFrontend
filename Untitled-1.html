@@ -1,8 +1,104 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Basic HTML Page</title>
+  <title>To-Do App with Complete & Delete</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #newTask { padding: 5px; }
+    button { padding: 4px 8px; cursor: pointer; margin-left: 5px; }
+    ul { list-style-type: none; padding: 0; }
+    li { 
+      padding: 6px; 
+      margin: 5px 0; 
+      background: #eee; 
+      border-radius: 3px; 
+    }
+    .deleteBtn { 
+      background: black; 
+      color: white; 
+      border: none; 
+      border-radius: 3px; 
+    }
+    .completeBtn { 
+      background: grey; 
+      color: white; 
+      border: none; 
+      border-radius: 3px; 
+    }
+    input[type="text"] { padding: 4px; }
+    .completed { background: yellow !important; }
+  </style>
 </head>
 <body>
-    <script>src="new1.js"</script>
+  <h2>Editable To-Do List</h2>
+  <input type="text" id="newTask" placeholder="Add new task">
+  <button id="addBtn">Add</button>
+
+  <ul id="todoList">
+    <li>
+      <span>Learn jQuery</span>
+      <button class="completeBtn">Complete</button>
+      <button class="deleteBtn">Delete</button>
+    </li>
+    <li>
+      <span>Practice JavaScript</span>
+      <button class="completeBtn">Complete</button>
+      <button class="deleteBtn">Delete</button>
+    </li>
+  </ul>
+
+  <script>
+    $(document).ready(function(){
+      // Function to create task <li>
+      function createTask(taskText){
+        return $("<li><span>" + taskText + "</span> " +
+                 "<button class='completeBtn'>Complete</button> " +
+                 "<button class='deleteBtn'>Delete</button></li>");
+      }
+
+      // Add task
+      $("#addBtn").click(function(){
+        let task = $("#newTask").val().trim();
+        if(task){
+          $("#todoList").append(createTask(task));
+          $("#newTask").val("");
+        }
+      });
+
+      // Press Enter to add task
+      $("#newTask").keydown(function(e){
+        if(e.key === "Enter"){
+          $("#addBtn").click();
+        }
+      });
+
+      // Edit task on double-click
+      $("#todoList").on("dblclick", "span", function(){
+        let span = $(this);
+        let currentText = span.text();
+        let input = $("<input type='text'>").val(currentText);
+        span.replaceWith(input);
+        input.focus();
+
+        input.on("keydown blur", function(e){
+          if(e.type === "blur" || e.key === "Enter"){
+            let newText = $(this).val();
+            $(this).replaceWith("<span>" + newText + "</span>");
+          }
+        });
+      });
+
+      // Mark as complete
+      $("#todoList").on("click", ".completeBtn", function(){
+        $(this).parent().toggleClass("completed");
+      });
+
+      // Delete task
+      $("#todoList").on("click", ".deleteBtn", function(){
+        $(this).parent().remove();
+      });
+    });
+  </script>
 </body>
 </html>
