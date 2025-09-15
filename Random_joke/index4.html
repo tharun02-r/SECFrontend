@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Joke Generator</title>
+
+  <!-- ✅ Link CSS -->
+  <link rel="stylesheet" href="style4.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Random Joke Generator</h1>
+
+  <div id="jokeDisplay">Loading a funny joke...</div>
+
+  <button id="getJoke">Get Joke</button>
+  <button id="nextJoke">Next Joke</button>
+
+  <script src="script4.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $("#getJoke").click(function(){
+        $("h1").text("Joke Generated");
+      });
+    });
+  </script>
+</body>
+</html>
